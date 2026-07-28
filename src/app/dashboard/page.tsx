@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "@/components/LogoutButton";
@@ -30,6 +31,18 @@ export default async function DashboardPage() {
             Logged in as <span className="font-medium">{user.email}</span>
           </p>
         </div>
+        <Link
+          href="/farm"
+          className="block rounded-md bg-black dark:bg-white text-white dark:text-black py-2 text-sm font-medium hover:opacity-90"
+        >
+          Go to my farm
+        </Link>
+        <Link
+          href="/shop"
+          className="block rounded-md border border-gray-300 dark:border-gray-700 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-900"
+        >
+          Go to shop
+        </Link>
         <LogoutButton />
       </div>
     </div>
